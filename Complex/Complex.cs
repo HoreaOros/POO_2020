@@ -55,10 +55,11 @@ namespace ComplexNumbers
         }
 
 
-        // TODO
+        // TODO (done)
         public Complex Subtract(Complex c2)
         {
-            throw new NotImplementedException();
+            Complex substract = new Complex(re - c2.re, im - c2.im);
+            return substract;
         }
 
 
