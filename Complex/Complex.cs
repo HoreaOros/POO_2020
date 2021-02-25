@@ -48,10 +48,11 @@ namespace ComplexNumbers
         }
 
 
-        // TODO
+        // TODO (done)
         public Complex Multiply(Complex c2)
         {
-            throw new NotImplementedException();
+            Complex produs = new Complex(re * c2.re - im * c2.im, im * c2.re + re * c2.im);
+            return produs;
         }
 
 
