@@ -26,9 +26,18 @@ namespace ComplexNumbers
             this.im = im;
         }
 
-        // TODO: modificat codul in asa fel incat sa tina cont de valori 0 sau negative.
+        // TODO: modificat codul in asa fel incat sa tina cont de valori 0 sau negative.(done)
         public override string ToString()
         {
+            if(re == 0)
+                return "(" + im.ToString() + "i" + ")";
+
+            if(im == 0)
+                return "(" + re.ToString() + ")";
+
+            if(im < 0)
+                return "(" + re.ToString() + im.ToString() + "i" + ")";
+
             return "(" + re.ToString() + "+" + im.ToString() + "i" + ")";
         }
 
