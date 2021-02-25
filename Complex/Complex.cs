@@ -2,7 +2,7 @@
 
 namespace ComplexNumbers
 {
-    internal class Complex
+    public class Complex
     {
         private double re;
         private double im;
@@ -40,14 +40,14 @@ namespace ComplexNumbers
 
 
         // TODO
-        internal Complex Multiply(Complex c2)
+        public Complex Multiply(Complex c2)
         {
             throw new NotImplementedException();
         }
 
 
         // TODO
-        internal Complex Subtract(Complex c2)
+        public Complex Subtract(Complex c2)
         {
             throw new NotImplementedException();
         }
