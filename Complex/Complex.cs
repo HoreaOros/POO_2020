@@ -54,10 +54,22 @@ namespace ComplexNumbers
 
 
         // TODO
-        public int Real { get; set; }
-        public int Imag { get; set; }
-        public int Modul { get; set; }
-        public int Argument { get; set; }
+        public double Real
+        {
+            get
+            {
+                return re;
+            }
+        }
+        public double Imag 
+        { 
+            get
+            {
+                return im;
+            }
+        }
+        public double Modul { get; set; }
+        public double Argument { get; set; }
 
 
         // TODO
