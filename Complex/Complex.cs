@@ -139,6 +139,10 @@ namespace ComplexNumbers
             {
                 return re;
             }
+            set
+            {
+                re = value;
+            }
         }
         public double Imag
         {
@@ -146,11 +150,37 @@ namespace ComplexNumbers
             {
                 return im;
             }
+            set
+            {
+                im = value;
+            }
         }
-        public double Modul { get; set; }
+        public double Modul 
+        {
+            get
+            {
+                return Math.Sqrt(re * re + im * im);
+            }       
+        }
         public double Argument { get; set; }
 
-
+        public static Complex operator + (Complex firstNumber, Complex secondNumber)
+        {
+            Complex sum = new Complex(firstNumber.re + secondNumber.re, firstNumber.im + secondNumber.im);
+            return sum;
+        }
+        public static Complex operator - (Complex firstNumber, Complex secondNumber)
+        {
+            Complex sub = new Complex(firstNumber.re - secondNumber.re, firstNumber.im - secondNumber.im);
+            return sub;
+        }
+        public static Complex operator * (Complex firstNumber, Complex secondNumber)
+        {
+            Complex produs = new Complex(firstNumber.re * secondNumber.re - firstNumber.im * secondNumber.im,
+                firstNumber.im * secondNumber.re + firstNumber.re * secondNumber.im);
+            return produs;
+        }
+            
         // TODO
         // orice alte operatii pe care le cunoasteti cu operatii complexe. 
     }

@@ -16,6 +16,8 @@ namespace ComplexNumbers
             Complex c4 = new Complex(0, -5);
             Complex c5 = new Complex("5+6i");
 
+          
+
 
             Console.WriteLine(c1);
             Console.WriteLine(c2);
@@ -24,9 +26,8 @@ namespace ComplexNumbers
             Console.WriteLine(c5);
 
 
-            // TODO: supraincarcarea operatorilor aritmetici pentru tipul Complex
+            // TODO: supraincarcarea operatorilor aritmetici pentru tipul Complex (done)
             // Complex suma = c1 + c2;
-
 
             Complex suma = c1.Add(c2);
 
