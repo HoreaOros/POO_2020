@@ -132,7 +132,7 @@ namespace ComplexNumbers
         }
 
 
-        // TODO
+        // TODO (done)
         public double Real
         {
             get
@@ -155,33 +155,49 @@ namespace ComplexNumbers
                 im = value;
             }
         }
-        public double Modul 
+        public double Modul
         {
             get
             {
                 return Math.Sqrt(re * re + im * im);
-            }       
+            }
         }
-        public double Argument { get; set; }
+        public double Argument
+        {
+            get
+            {
+                double arg = Math.Atan(im / re);
+                return arg;
+            }
+        }
 
-        public static Complex operator + (Complex firstNumber, Complex secondNumber)
+        public static Complex operator +(Complex firstNumber, Complex secondNumber)
         {
             Complex sum = new Complex(firstNumber.re + secondNumber.re, firstNumber.im + secondNumber.im);
             return sum;
         }
-        public static Complex operator - (Complex firstNumber, Complex secondNumber)
+        public static Complex operator -(Complex firstNumber, Complex secondNumber)
         {
             Complex sub = new Complex(firstNumber.re - secondNumber.re, firstNumber.im - secondNumber.im);
             return sub;
         }
-        public static Complex operator * (Complex firstNumber, Complex secondNumber)
+        public static Complex operator *(Complex firstNumber, Complex secondNumber)
         {
             Complex produs = new Complex(firstNumber.re * secondNumber.re - firstNumber.im * secondNumber.im,
                 firstNumber.im * secondNumber.re + firstNumber.re * secondNumber.im);
             return produs;
         }
-            
+
         // TODO
         // orice alte operatii pe care le cunoasteti cu operatii complexe. 
+
+        public Complex Complement
+        {
+            get
+            {
+                Complex compl = new Complex(re, (-1) * im);
+                return compl;
+            }
+        }
     }
 }

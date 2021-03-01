@@ -40,8 +40,6 @@ namespace ComplexNumbers
             Complex mult = c1.Multiply(c2);
             Console.WriteLine($"{c1} * {c2} = {mult}");
 
-            
-
         }
     }
 }
