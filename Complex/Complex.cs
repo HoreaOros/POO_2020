@@ -215,5 +215,17 @@ namespace ComplexNumbers
                 return toR;
             }
         }
+
+        public string ShowTrigForm
+        {
+            get
+            {
+                string trigForm;
+                double arg = Math.Atan(im / re);
+                double r = Math.Sqrt(re * re + im * im);
+                trigForm = $"{r}(cos({arg}) + i sin({arg}))";
+                return trigForm;
+            }
+        }
     }
 }
