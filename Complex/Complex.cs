@@ -97,6 +97,10 @@ namespace ComplexNumbers
         }
 
         public double Modul(Complex c) => Math.Sqrt(Math.Pow(re, 2) + Math.Pow(im, 2));
-        public double Argument(Complex c) => Math.Atan(im / re); 
+        public double Argument(Complex c) => Math.Atan(im / re);
+
+        public static Complex operator +(Complex c1, Complex c2) => new Complex(c1.re + c2.re, c1.im + c2.im);
+        public static Complex operator -(Complex c1, Complex c2) => new Complex(c1.re - c2.re, c1.im - c2.im);
+        public static Complex operator *(Complex c1, Complex c2) => new Complex(c1.re * c2.re, c1.im * c2.im);
     }
 }
