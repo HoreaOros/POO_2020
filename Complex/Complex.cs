@@ -199,5 +199,21 @@ namespace ComplexNumbers
                 return compl;
             }
         }
+
+        public static Complex operator ^(Complex number, uint power)
+        {
+            Complex toR = new Complex(1);
+            if (power == 0)
+                return new Complex(1, 0);
+            else
+                if (power == 1)
+                return number;
+            else
+            {
+                for (int i = 0; i < power; i++)
+                    toR = toR * number;
+                return toR;
+            }
+        }
     }
 }
