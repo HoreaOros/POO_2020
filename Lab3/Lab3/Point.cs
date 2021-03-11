@@ -42,8 +42,15 @@ namespace Lab3
             {
                 currentHistoryIndex = history.Count - 1;
 
-                this.x = history[currentHistoryIndex - 1].x;
-                this.y = history[currentHistoryIndex - 1].y;
+                this.x = history[currentHistoryIndex].x;
+                this.y = history[currentHistoryIndex].y;
+            }
+            else
+            {
+                currentHistoryIndex += steps;
+
+                this.x = history[currentHistoryIndex].x;
+                this.y = history[currentHistoryIndex].y;
             }
         }
 
