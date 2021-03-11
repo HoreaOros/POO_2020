@@ -1,44 +1,95 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Lab3
 {
     public class Point
     {
         private double x, y;
+        private double initialX, initialY;
 
-        #region Undo_functionality
-        //TODO
-        // tinem un istoric al valorilor pe care le-a avut punctul
-        Stack<Point> history = new Stack<Point>();
+        #region History
+        
+        List<Point> history = new List<Point>();
+        int currentHistoryIndex = 0;
 
-        public void StepBack()
+        public void returnToInitialValues()
         {
-
+            this.x = initialX;
+            this.y = initialY;
         }
+
+        public void StepBack(int steps) // how many steps back do we take?
+        {
+            if (currentHistoryIndex < steps)
+            {
+                currentHistoryIndex = 0;
+                return;
+            }
+            else
+            {
+                currentHistoryIndex = currentHistoryIndex - steps;
+
+                this.x = history[currentHistoryIndex].x;
+                this.y = history[currentHistoryIndex].y;
+            }
+        }
+
+        public void StepAhead(int steps) // redo
+        {
+            if (currentHistoryIndex + steps >= history.Count)
+            {
+                currentHistoryIndex = history.Count - 1;
+
+                this.x = history[currentHistoryIndex].x;
+                this.y = history[currentHistoryIndex].y;
+            }
+            else
+            {
+                currentHistoryIndex += steps;
+
+                this.x = history[currentHistoryIndex].x;
+                this.y = history[currentHistoryIndex].y;
+            }
+        }
+
         #endregion
         #region c-tors
         public Point(): this(0.0, 0.0)
         {
-
+            
         }
         public Point(double x, double y)
         {
             this.x = x;
             this.y = y;
+
+            initialX = x;
+            initialY = y;
         }
 
         /// <summary>
         /// initializeaza un Point pe baza unui string de forma "(3.0;4.0)"
         /// </summary>
         /// <param name="str"></param>
-        public Point(string str)
+        public Point(string p)
         {
-            // TODO 
-            str = str.Trim();
+            // we get rid of the usless elements ( '(' , ')', spaces) and split the string in two => left part of ',' and right part of ','
+            p = Regex.Replace(p, @"\s+", "");
+            p = Regex.Replace(p, @"\(", "");
+            p = Regex.Replace(p, @"\)", "");
 
-            // creati un Regex care verifica daca stringrul are forma potrivita
-            
+            try
+            {
+                string[] coordinates = p.Split(',');
+                this.x = double.Parse(coordinates[0]);
+                this.y = double.Parse(coordinates[1]);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("EXCEPTION: Bad input format :(");
+            }
         }
 
         
@@ -54,6 +105,11 @@ namespace Lab3
         {
             this.x += dx;
             this.y += dy;
+
+            
+            // add to the history the new point and jumps to the end of the list
+            history.Add(new Point(x, y));
+            currentHistoryIndex = history.Count - 1;
         }
 
         public double DistanceToOrigin()
