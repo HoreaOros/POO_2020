@@ -31,6 +31,15 @@ namespace Lab3
 
         /// <summary>
         /// initializeaza un Point pe baza unui string de forma "(3.0;4.0)"
+        /// Functioneaza pentru valori precum:
+        /// (1.0, 2.0)
+        /// (1.0, 2)
+        /// (1.0,2)
+        /// (1.0, 2.321)
+        /// (1.0,2.321)
+        /// (1.0,2.0)
+        /// (1,2.0)
+        /// (  133.0,2.0)
         /// </summary>
         /// <param name="str"></param>
         public Point(string str)
