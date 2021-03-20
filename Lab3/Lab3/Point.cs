@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Lab3
 {
@@ -34,11 +35,16 @@ namespace Lab3
         /// <param name="str"></param>
         public Point(string str)
         {
-            // TODO 
-            str = str.Trim();
+            Regex rgx = new Regex(@"\s*\(\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\s*\)\s*");
+            var match = rgx.Match(str);
 
-            // creati un Regex care verifica daca stringrul are forma potrivita
-            
+            if (match.Success)
+            {
+                x = double.Parse(match.Groups[1].ToString());
+                y = double.Parse(match.Groups[2].ToString());
+            }
+
+            else throw new ArgumentException("Input string was in wrong format.");
         }
 
         
