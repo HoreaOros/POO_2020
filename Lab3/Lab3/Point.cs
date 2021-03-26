@@ -18,9 +18,9 @@ namespace Lab3
         }
         #endregion
         #region c-tors
-        public Point(): this(0.0, 0.0)
+        public Point():this(0.0, 0.0)
         {
-
+            
         }
         public Point(double x, double y)
         {
