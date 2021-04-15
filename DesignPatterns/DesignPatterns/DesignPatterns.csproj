@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F359B6E-8CDA-4C9E-BDF0-A9048E5419CF}</ProjectGuid>
+    <ProjectGuid>{F6BB2002-F524-4573-B76E-14BD59848863}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_25_martie</RootNamespace>
-    <AssemblyName>25 martie</AssemblyName>
+    <RootNamespace>DesignPatterns</RootNamespace>
+    <AssemblyName>DesignPatterns</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,15 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContBancar.cs" />
-    <Compile Include="InvalidAmountException.cs" />
-    <Compile Include="Logger.cs" />
+    <Compile Include="Builder\LunchOrder.cs" />
+    <Compile Include="Builder\LunchOrderProp.cs" />
+    <Compile Include="Builder\LunchOrderTelesoping.cs" />
+    <Compile Include="Builder\Strings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Bank.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
