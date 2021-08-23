@@ -21,7 +21,7 @@ namespace ComplexNumbers
             Console.WriteLine(c2);
             Console.WriteLine(c3);
             Console.WriteLine(c4);
-
+            Console.WriteLine(c5);
 
             // TODO: supraincarcarea operatorilor aritmetici pentru tipul Complex
             // Complex suma = c1 + c2;
