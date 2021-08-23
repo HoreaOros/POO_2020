@@ -16,16 +16,18 @@ namespace ComplexNumbers
             Complex c4 = new Complex(0, -5);
             Complex c5 = new Complex("5+6i");
 
+          
+
 
             Console.WriteLine(c1);
             Console.WriteLine(c2);
             Console.WriteLine(c3);
             Console.WriteLine(c4);
+            Console.WriteLine(c5);
 
 
-            // TODO: supraincarcarea operatorilor aritmetici pentru tipul Complex
+            // TODO: supraincarcarea operatorilor aritmetici pentru tipul Complex (done)
             // Complex suma = c1 + c2;
-
 
             Complex suma = c1.Add(c2);
 
@@ -37,8 +39,6 @@ namespace ComplexNumbers
 
             Complex mult = c1.Multiply(c2);
             Console.WriteLine($"{c1} * {c2} = {mult}");
-
-            
 
         }
     }
